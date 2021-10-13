@@ -5,8 +5,8 @@ public class Country {
     private String name;
     private String capital;
     private Object currencies;
-    private int population;
-    private int area;
+    private Integer population;
+    private Integer area;
 
     public String getName() {
         return name;
@@ -24,14 +24,18 @@ public class Country {
         return population;
     }
 
+    public void setPopulation(int newPopulation) { this.population = newPopulation; }
+
     public int getArea() {
         return area;
     }
 
+    public void setArea(int newArea) { this.area = newArea; }
+
     public double calculateDensity() {
-        if (population != 0 || area != 0)
-            return population / (double)area;
-        return 0;
+        if (population == null || area == null)
+            return 0;
+        return population / (double)area;
     }
 }
 

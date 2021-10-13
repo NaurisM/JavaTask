@@ -44,7 +44,7 @@ public class CountryService implements ICountryService {
         List<String> densityList = new ArrayList<String>();
         DecimalFormat df = new DecimalFormat("#.#");
         Collections.sort(countryList, Comparator.comparingDouble(Country::calculateDensity).reversed());
-        countryList.subList(1, 11)
+        countryList.subList(0, 10)
                 .forEach(country -> densityList.add(country.getName() + " : " + df.format(country.calculateDensity())));
         return densityList;
     }
